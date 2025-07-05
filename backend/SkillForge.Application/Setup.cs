@@ -1,5 +1,9 @@
 ﻿namespace SkillForge.Application;
 
-public class Setup
+public static class Setup
 {
+    public static void AddApplication()
+    {
+        
+    }
 }
