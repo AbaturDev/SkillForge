@@ -15,9 +15,5 @@ public static class Setup
         builder.Services.AddDbContext<SkillForgeContext>(options => 
             options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))
         );
-        
-        builder.Services.AddIdentity<User, IdentityRole<Guid>>()
-            .AddEntityFrameworkStores<SkillForgeContext>()
-            .AddDefaultTokenProviders();
     }
 }

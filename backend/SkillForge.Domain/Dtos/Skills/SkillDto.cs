@@ -11,5 +11,4 @@ public sealed record SkillDto
     public required string Description { get; set; }
     public DateTimeOffset? EndedAt { get; set; }
     public required SkillStatus SkillStatus { get; set; }
-    public required Guid UserId { get; set; }
 }

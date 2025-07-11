@@ -1,5 +1,3 @@
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using SkillForge.Domain.Commons;
@@ -7,7 +5,7 @@ using SkillForge.Domain.Entities;
 
 namespace SkillForge.Infrastructure.Contexts;
 
-public sealed class SkillForgeContext : IdentityDbContext<User, IdentityRole<Guid>, Guid>
+public sealed class SkillForgeContext : DbContext
 {
     private readonly TimeProvider _timeProvider;
     

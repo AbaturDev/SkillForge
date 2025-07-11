@@ -16,7 +16,6 @@ public static class SkillMappers
             Description = skill.Description,
             EndedAt = skill.EndedAt,
             SkillStatus = skill.SkillStatus,
-            UserId = skill.UserId
         };
 
         return skillDto;

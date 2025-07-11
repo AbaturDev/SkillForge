@@ -55,14 +55,11 @@ public class SkillService : ISkillService
 
     public async Task<Guid> CreateSkillAsync(CreateSkillDto dto, CancellationToken ct)
     {
-        var userId = new Guid();
-
         var skill = new Skill
         {
             Name = dto.Name,
             Description = dto.Description,
             SkillStatus = SkillStatus.Active,
-            UserId = userId
         };
 
         await _dbContext.Skills.AddAsync(skill, ct);
