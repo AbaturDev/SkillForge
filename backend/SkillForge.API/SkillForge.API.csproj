@@ -12,6 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\SkillForge.Application\SkillForge.Application.csproj" />
       <ProjectReference Include="..\SkillForge.Infrastructure\SkillForge.Infrastructure.csproj" />
     </ItemGroup>
 

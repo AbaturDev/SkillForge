@@ -6,5 +6,4 @@ public sealed record CreateSkillDto
 {
     public required string Name { get; set; }
     public required string Description { get; set; }
-    public required SkillStatus SkillStatus { get; set; }
 }
