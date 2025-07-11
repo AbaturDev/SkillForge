@@ -1,5 +1,7 @@
 # SkillForge
-**SkillForge** is a simple web application focused on managing skill progress during learning. App is developed as a learning project for practicing **React** and **TypeScript**.
+**SkillForge** is a simple web application focused on managing skill progress during learning. The app is developed as a **proof of concept** and a learning project for practicing **React** and **TypeScript**.
+
+This project focuses mainly on frontend development and experimenting with React.
 
 ## Technologies Used
 
@@ -11,4 +13,3 @@
 - Managing learning skills
 - Taking notes for skills
 - Timesheets for tracking time spent on skills
-- Account management
