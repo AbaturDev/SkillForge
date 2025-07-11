@@ -5,7 +5,7 @@ namespace SkillForge.Domain.Commons;
 
 public abstract record BaseEntity<TId> : ITimeTrackable where TId: struct
 {
-    public TId Id { get; set; }
+    public TId Id { get; init; }
     public DateTimeOffset CreatedAt { get; set; }
     public DateTimeOffset UpdatedAt { get; set; }
 }

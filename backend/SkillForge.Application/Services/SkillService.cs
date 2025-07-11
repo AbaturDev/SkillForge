@@ -5,6 +5,7 @@ using SkillForge.Domain.Commons;
 using SkillForge.Domain.Dtos.Skills;
 using SkillForge.Domain.Entities;
 using SkillForge.Domain.Enums;
+using SkillForge.Domain.Exceptions;
 using SkillForge.Domain.Interfaces;
 using SkillForge.Infrastructure.Contexts;
 
@@ -44,7 +45,7 @@ public class SkillService : ISkillService
 
         if (skill is null)
         {
-            throw new Exception("Not found");
+            throw new NotFoundException("Skill not found");
         }
 
         var skillDto = SkillMappers.MapToSkillDto(skill);
@@ -77,13 +78,12 @@ public class SkillService : ISkillService
 
         if (skill is null)
         {
-            return;
+            throw new NotFoundException("Skill not found");
         }
 
         if (skill.SkillStatus == SkillStatus.Finished)
         {
-            //already finished
-            return;
+            throw new BadRequestException("Can not update finished skill");
         }
 
         skill.Name = dto.Name;
@@ -99,7 +99,7 @@ public class SkillService : ISkillService
 
         if (skill is null)
         {
-            return;
+            throw new NotFoundException("Skill not found");
         }
 
         _dbContext.Skills.Remove(skill);
@@ -113,12 +113,12 @@ public class SkillService : ISkillService
 
         if (skill is null)
         {
-            return;
+            throw new NotFoundException("Skill not found");
         }
 
         if (skill.SkillStatus == SkillStatus.Finished)
         {
-            throw new Exception("Bad req");        // change for bad req
+            throw new BadRequestException("Skill is already finished");
         }
 
         skill.SkillStatus = SkillStatus.Finished;
