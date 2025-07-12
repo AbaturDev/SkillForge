@@ -13,6 +13,8 @@ builder.AddOpenApiDocs();
 
 var app = builder.Build();
 
+app.UseApplication();
+
 app.MapOpenApiDocs();
 
 app.UseHttpsRedirection();

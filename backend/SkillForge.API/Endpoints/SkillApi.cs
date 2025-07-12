@@ -27,7 +27,7 @@ public static class SkillApi
 
                 return Results.Ok(result);
             })
-            .Produces<PaginatedResponseDto<SkillDto>>(StatusCodes.Status200OK, "application/json");
+            .Produces<SkillDto>(StatusCodes.Status200OK, "application/json");
 
         group.MapPost("", async ([FromServices] ISkillService skillService, [FromBody] CreateSkillDto dto, CancellationToken ct ) =>
             {
