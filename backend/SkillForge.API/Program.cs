@@ -8,17 +8,14 @@ builder.Services.AddSingleton(TimeProvider.System);
 
 builder.AddInfrastructure();
 builder.AddApplication();
-
-builder.AddOpenApiDocs();
+builder.AddApi();
 
 var app = builder.Build();
 
 app.UseApplication();
 
-app.MapOpenApiDocs();
-
 app.UseHttpsRedirection();
 
-app.RegisterEndpoints();
+app.UseApi();
 
 app.Run();
