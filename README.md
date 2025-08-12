@@ -7,9 +7,3 @@ This project focuses mainly on frontend development and experimenting with React
 
 - **Backend:** ASP.NET Core 9, Entity Framework Core, MS SQL Server
 - **Frontend:** React with TypeScript
-
-## Features
-
-- Managing learning skills
-- Taking notes for skills
-- Timesheets for tracking time spent on skills
