@@ -18,4 +18,6 @@ app.UseHttpsRedirection();
 
 app.UseApi();
 
+await app.Seed();
+
 app.Run();
