@@ -6,4 +6,9 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\SkillForge.Domain\SkillForge.Domain.csproj" />
+      <ProjectReference Include="..\SkillForge.Infrastructure\SkillForge.Infrastructure.csproj" />
+    </ItemGroup>
+
 </Project>

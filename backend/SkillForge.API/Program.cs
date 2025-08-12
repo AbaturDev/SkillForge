@@ -1,3 +1,5 @@
+using SkillForge.API.Extensions;
+using SkillForge.Application;
 using SkillForge.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,16 +7,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddSingleton(TimeProvider.System);
 
 builder.AddInfrastructure();
-
-builder.Services.AddOpenApi();
+builder.AddApplication();
+builder.AddApi();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+app.UseApplication();
 
 app.UseHttpsRedirection();
+
+app.UseApi();
 
 app.Run();

@@ -4,9 +4,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillForge.API", "SkillForg
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillForge.Domain", "SkillForge.Domain\SkillForge.Domain.csproj", "{E015E389-4AE2-41E6-B8CC-F906301D973E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillForge.Application", "SkillForge.Application\SkillForge.Application.csproj", "{22366744-2051-4204-BBD3-E34D1DC4884A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillForge.Infrastructure", "SkillForge.Infrastructure\SkillForge.Infrastructure.csproj", "{BFCFB518-DECF-4714-BDD7-3AB62A44E111}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SkillForge.Application", "SkillForge.Application\SkillForge.Application.csproj", "{BBFA7E14-D582-4D01-A437-983167EC5A67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -22,13 +22,13 @@ Global
 		{E015E389-4AE2-41E6-B8CC-F906301D973E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E015E389-4AE2-41E6-B8CC-F906301D973E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E015E389-4AE2-41E6-B8CC-F906301D973E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{22366744-2051-4204-BBD3-E34D1DC4884A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{22366744-2051-4204-BBD3-E34D1DC4884A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{22366744-2051-4204-BBD3-E34D1DC4884A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{22366744-2051-4204-BBD3-E34D1DC4884A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BFCFB518-DECF-4714-BDD7-3AB62A44E111}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{BFCFB518-DECF-4714-BDD7-3AB62A44E111}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFCFB518-DECF-4714-BDD7-3AB62A44E111}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFCFB518-DECF-4714-BDD7-3AB62A44E111}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBFA7E14-D582-4D01-A437-983167EC5A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBFA7E14-D582-4D01-A437-983167EC5A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBFA7E14-D582-4D01-A437-983167EC5A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBFA7E14-D582-4D01-A437-983167EC5A67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
