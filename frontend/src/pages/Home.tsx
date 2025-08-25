@@ -6,7 +6,7 @@ export const Home = () => {
     <Center paddingY={3}>
       <Box display="flex">
         <VStack padding={5}>
-          <Text fontSize="3xl" fontWeight="bold">
+          <Text fontSize="4xl" fontWeight="bold">
             Welcome to the Skill Forge!
           </Text>
           <Image src={skill} boxSize={500} padding={4} objectFit="contain" />

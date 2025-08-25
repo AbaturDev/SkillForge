@@ -1,14 +1,15 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
-import { TopBar } from "./components/TopBar";
+import { Layout } from "./Layout";
 
 function App() {
   return (
     <>
-      <TopBar />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
