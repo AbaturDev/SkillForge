@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { Layout } from "./Layout";
+import { Skills } from "./pages/Skills";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Home />} />
+            <Route path="/skills" element={<Skills />} />
           </Route>
         </Routes>
       </BrowserRouter>
