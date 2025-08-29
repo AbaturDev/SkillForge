@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react"
 import { SkillsService } from '../services/skills'
-import type { PaginationQuery } from "../models/commons"
+import type { Paginated, PaginationQuery } from "../models/commons"
 import type { Skill } from "../models/skills";
 import { CanceledError } from "axios";
 
 export const useSkills = ({ pageSize = 10, pageNumber = 1 }: PaginationQuery) => {
-    const [skills, setSkills] = useState<Skill[]>([]);
+    const [data, setData] = useState<Paginated<Skill>>()
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(false)
 
@@ -15,8 +15,8 @@ export const useSkills = ({ pageSize = 10, pageNumber = 1 }: PaginationQuery) =>
             setError('')
 
             try {
-                const data = await SkillsService.getSkillsList({ pageSize, pageNumber });
-                setSkills(data.items);
+                const response = await SkillsService.getSkillsList({ pageSize, pageNumber });
+                setData(response)
             } catch (ex) {
                 if (ex instanceof CanceledError) {
                     return
@@ -30,5 +30,5 @@ export const useSkills = ({ pageSize = 10, pageNumber = 1 }: PaginationQuery) =>
         fetchSkills()
     }, [pageSize, pageNumber]);
 
-    return { skills, error, isLoading }
+    return { data, error, isLoading }
 } 
