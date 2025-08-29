@@ -14,7 +14,6 @@ export const SkillsService = {
                 ...args
             }
         })
-
         return data
     },
 

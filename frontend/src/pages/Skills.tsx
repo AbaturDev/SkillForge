@@ -1,25 +1,14 @@
-import { Table } from "@chakra-ui/react";
-import { SkillsService } from "../services/skills";
-import { useEffect, useState } from "react";
-import type { Skill } from "../models/skills";
-
-const d = await SkillsService.getSkillsList({ pageSize: 10, pageNumber: 1 });
-console.log(d);
+import { Spinner, Table, Text } from "@chakra-ui/react";
+import { useSkills } from "../hooks/useSkills";
 
 export const Skills = () => {
-  const [skills, setSkills] = useState<Skill[]>([]);
+  const { skills, error, isLoading } = useSkills({
+    pageSize: 10,
+    pageNumber: 1,
+  });
 
-  useEffect(() => {
-    const fetchSkills = async () => {
-      const data = await SkillsService.getSkillsList({
-        pageSize: 10,
-        pageNumber: 1,
-      });
-      setSkills(data.items);
-    };
-
-    fetchSkills();
-  }, []);
+  if (isLoading) return <Spinner />;
+  if (error) return <Text color="red">{error}</Text>;
 
   return (
     <Table.Root>
