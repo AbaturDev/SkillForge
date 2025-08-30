@@ -1,4 +1,5 @@
-import { Flex, Button, Text } from "@chakra-ui/react";
+import { Flex, Text } from "@chakra-ui/react";
+import { AddSkillDialog } from "./AddSkillDialog";
 
 export const SkillsHeader = () => {
   return (
@@ -6,7 +7,7 @@ export const SkillsHeader = () => {
       <Text fontSize="5xl" fontWeight="bold">
         Skills List
       </Text>
-      <Button colorScheme="teal">Add skill</Button>
+      <AddSkillDialog />
     </Flex>
   );
 };

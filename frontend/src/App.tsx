@@ -3,10 +3,12 @@ import { Home } from "./pages/Home";
 import { Layout } from "./Layout";
 import { Skills } from "./pages/Skills";
 import { SkillDetails } from "./pages/Skill.Details";
+import { Toaster } from "./components/ui/toaster"
 
 function App() {
   return (
     <>
+      <Toaster />
       <BrowserRouter>
         <Routes>
           <Route element={<Layout />}>
