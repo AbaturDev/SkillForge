@@ -23,7 +23,7 @@ export const SkillsTable = () => {
   });
 
   if (isLoading) return <Spinner />;
-  if (error) return <Text color="red">{error}</Text>;
+  if (error) return <Text color="red">{error.message}</Text>;
   if (!data) return <Text color="red">Failed to fetch skills</Text>;
 
   const { items: skills, totalPages } = data;

@@ -16,6 +16,7 @@ import z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SkillsService } from "../services/skills";
 import { useState } from "react";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 const schema = z.object({
   name: z
@@ -37,26 +38,34 @@ export const AddSkillDialog = () => {
     reset,
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-  const onSubmit = async (data: FormData) => {
-    try {
-      await SkillsService.createSkill({
+const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (data: FormData) =>
+      SkillsService.createSkill({
         name: data.name,
         description: data.description,
-      });
+      }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["skills"] });
       toaster.create({
         description: "Sucessfully created skill",
         type: "success",
       });
-    } catch {
+      setOpen(false);
+      reset();
+    },
+    onError: () => {
       toaster.create({
         description: "Failed to create the skill",
         type: "error",
       });
-    } finally {
-        setOpen(false)
-        reset()
-    }
-  };
+      setOpen(false);
+      reset();
+    },
+  });
+
+  const onSubmit = (data: FormData) => mutation.mutate(data);
 
   return (
     <Dialog.Root
@@ -78,7 +87,7 @@ export const AddSkillDialog = () => {
                 <CloseButton size="sm" />
               </Dialog.CloseTrigger>
             </Dialog.Header>
-            <form onSubmit={handleSubmit((data) => onSubmit(data))}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <Dialog.Body>
                 <Stack gap="4">
                   <Field.Root>
