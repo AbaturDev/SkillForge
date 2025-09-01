@@ -30,6 +30,6 @@ export const SkillsService = {
     },
 
     endSkill: async (id: string) => {
-        await apiClient.post(`/skills/${id}`)
+        await apiClient.post(`/skills/${id}/end`)
     },
 }
