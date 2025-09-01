@@ -38,7 +38,7 @@ export const AddSkillDialog = () => {
     reset,
   } = useForm<FormData>({ resolver: zodResolver(schema) });
 
-const queryClient = useQueryClient();
+  const queryClient = useQueryClient();
 
   const mutation = useMutation({
     mutationFn: (data: FormData) =>

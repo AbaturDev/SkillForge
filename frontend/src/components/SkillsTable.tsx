@@ -6,7 +6,7 @@ import {
   Table,
   Text,
 } from "@chakra-ui/react";
-import { useSkills } from "../hooks/useSkills";
+import { useSkillsList } from "../hooks/useSkillsList";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
@@ -17,7 +17,7 @@ export const SkillsTable = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const pageSize = 10;
 
-  const { data, error, isLoading } = useSkills({
+  const { data, error, isLoading } = useSkillsList({
     pageSize,
     pageNumber,
   });
